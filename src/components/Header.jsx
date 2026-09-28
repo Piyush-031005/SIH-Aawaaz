@@ -1,5 +1,5 @@
 import React from 'react';
-import './Header.css'; // We'll add some specific css later if needed or rely on index.css
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -27,7 +27,7 @@ const Header = () => {
             </ul>
           </nav>
           <div className="header-actions">
-            <button className="btn btn-primary">Try Demo</button>
+            <Link to="/dashboard" className="btn btn-primary">Officer Login</Link>
           </div>
         </div>
       </div>
