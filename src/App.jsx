@@ -1,122 +1,78 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import React from 'react';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Features from './components/Features';
+import Footer from './components/Footer';
+import './index.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
+    <div className="App">
+      <Header />
+      <Hero />
+      <Features />
+      
+      {/* Workflow Section */}
+      <section id="how-it-works" className="section workflow">
+        <div className="container">
+          <h2 className="section-title">How It Works</h2>
+          <p className="section-subtitle">A seamless voice-first experience from outreach to outcome tracking.</p>
+          
+          <div className="workflow-steps">
+            <div className="step">
+              <div className="step-number">1</div>
+              <h4>Listen</h4>
+              <p>ASR turns dialect speech into text via Missed-Call or WhatsApp</p>
+            </div>
+            <div className="step">
+              <div className="step-number">2</div>
+              <h4>Converse</h4>
+              <p>LLM slot-filling extracts education, skill, trade, and mobility</p>
+            </div>
+            <div className="step">
+              <div className="step-number">3</div>
+              <h4>Match</h4>
+              <p>RAG over verified NSQF courses & local demand ranking</p>
+            </div>
+            <div className="step">
+              <div className="step-number">4</div>
+              <h4>Validate</h4>
+              <p>Repeat-back confirmation & officer review before GIA enrolment</p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+      {/* Impact Section */}
+      <section id="impact" className="section">
+        <div className="container">
+          <h2 className="section-title">Impact & Scale</h2>
+          <p className="section-subtitle">Targeting 47,000+ SC-majority villages with accessible digital infrastructure.</p>
+          
+          <div className="impact-grid">
+            <div className="stat-card">
+              <div className="stat-number">122+</div>
+              <div className="stat-label">Languages Supported</div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-number">47k+</div>
+              <div className="stat-label">Villages Reached</div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-number">0</div>
+              <div className="stat-label">Forms to Fill</div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-number">3/6/12</div>
+              <div className="stat-label">Months Tracking</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
 }
 
-export default App
+export default App;
